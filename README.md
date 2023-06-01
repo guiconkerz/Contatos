@@ -12,7 +12,7 @@ Para rodar o projeto localmente:
   - Local onde pode ser armazenado uma lista de contatos para um usuário;
   - Cada usuário possui sua lista particular de contatos;
   - Somente os usuários com perfil Administrador podem visualizar/editar os usuários do sistema;
-  - Os usuários administrador podem visualizar a quantidade e a lista de contatos de todos os outros usuários.
+  - Os usuários administradores podem visualizar a quantidade e a lista de contatos de todos os outros usuários.
 
 # Porque foi elaborado desta forma?
 
