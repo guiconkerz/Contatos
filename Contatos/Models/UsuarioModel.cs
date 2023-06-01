@@ -42,5 +42,18 @@ namespace Contatos.Models
         {
             Senha = Senha.Criptografar();
         }
+
+        public string GerarNovaSenha()
+        {
+            string novaSenha = Guid.NewGuid().ToString().Substring(0, 8);
+            Senha = novaSenha.Criptografar();
+            return novaSenha;
+        }
+
+        public void SetNovaSenha(string novaSenha)
+        {
+            Senha = novaSenha.Criptografar();
+        }
+        public virtual List<ContatoModel>? Contatos { get; set; }
     }
 }

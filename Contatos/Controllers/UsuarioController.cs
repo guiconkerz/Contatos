@@ -10,9 +10,11 @@ namespace Contatos.Controllers
     public class UsuarioController : Controller
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;
-        public UsuarioController(IUsuarioRepositorio UsuarioRepositorio)
+        private readonly IContatoRepositorio _contatoRepositorio;
+        public UsuarioController(IUsuarioRepositorio UsuarioRepositorio, IContatoRepositorio contatoRepositorio)
         {
-            _usuarioRepositorio = UsuarioRepositorio;
+            this._usuarioRepositorio = UsuarioRepositorio;
+            this._contatoRepositorio = contatoRepositorio;
         }
         public IActionResult Index()
         {
@@ -51,6 +53,19 @@ namespace Contatos.Controllers
             catch (Exception ex)
             {
                 TempData["MensagemErro"] = $"Ops, não conseguimos remover o usuário. Tente novamente. Detalhe: {ex.Message}";
+                return RedirectToAction("Index");
+            }
+        }
+        public IActionResult ListarContatosPorUsuarioId(int id)
+        {
+            try
+            {
+                List<ContatoModel> contatos = _contatoRepositorio.BuscarContatos(id);
+                return PartialView(viewName: "_ContatosUsuario", model: contatos);
+            }
+            catch (Exception ex)
+            {
+                TempData["MensagemErro"] = $"Ocorreu um erro. Detalhe: {ex.Message}";
                 return RedirectToAction("Index");
             }
         }

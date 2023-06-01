@@ -18,5 +18,7 @@ namespace Contatos.Models
         [Required(ErrorMessage = "Por favor, digite o telefone do contato")]
         [Phone(ErrorMessage = "O telefone informado não é válido")]
         public string Telefone { get => _telefone; set => _telefone = value; }
+        public int? UsuarioId { get; set; }
+        public UsuarioModel? Usuario { get; set; }
     }
 }

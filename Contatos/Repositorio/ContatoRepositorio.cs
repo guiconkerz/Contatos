@@ -15,9 +15,9 @@ namespace Contatos.Repositorio
             this._bancoContext = bancoContext;
             this._httpContext = httpContext; 
         }
-        public List<ContatoModel> BuscarContatos()
+        public List<ContatoModel> BuscarContatos(int usuarioId)
         {
-            return _bancoContext.Contatos.ToList();
+            return _bancoContext.Contatos.Where(x => x.UsuarioId == usuarioId).ToList();
         }
         public ContatoModel Adicionar(ContatoModel contato)
         {
