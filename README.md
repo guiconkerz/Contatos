@@ -1,12 +1,12 @@
 # Lista de Contatos
 
-Criado por: Guilherme Beltran
+Criado por: Guilherme Beltran.
 
 Para rodar o projeto localmente:
 
 1) Alterar os dados em appsettings.json, apontando para a base de dados e subtistuir as configurações do SMTP;
 2) Primeiro acesso deve ser feito com usuário: "admin" e senha "123";
-3) Alterar o email do usuário "admin" para o email que receberá o email com a nova senha
+3) Alterar o email do usuário "admin" para o email que receberá o email com a nova senha.
 
 # Qual o objetivo deste projeto?
   - Local onde pode ser armazenado uma lista de contatos para um usuário;
@@ -32,4 +32,17 @@ Para rodar o projeto localmente:
     - Bootstrap;
     - Javascript;
     - jQuery;
-    - Ajax;
+    - Ajax.
+
+# Quais técnicas C# foram aplicadas?
+    - Migration;
+    - Sobrecarga de métodos;
+    - LINQ;
+    - Expressões Lambdas;
+    - Autenticação/Autorização;
+    - Envio de Email;
+    - Classes abstratas;
+    - Métodos de extensões;
+    - Propriedades automáticas;
+    - Tratamento de exceções por tipo;
+    - Entre outras.
